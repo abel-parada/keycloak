@@ -24,7 +24,6 @@ const useAuth = () => {
     }
 
     useEffect(()=>{
-        console.log(hasRun.current)
         if(!hasRun.current) initializeKeycloak();
     },[])
 
