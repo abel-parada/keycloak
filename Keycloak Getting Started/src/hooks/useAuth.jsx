@@ -1,4 +1,4 @@
-import React, { useEffect, useState ,useRef} from 'react';
+import { useEffect, useState ,useRef} from 'react';
 import Keycloak from 'keycloak-js'
 
 
@@ -25,6 +25,7 @@ const useAuth = () => {
 
     useEffect(()=>{
         if(!hasRun.current) initializeKeycloak();
+        hasRun.current = true; // Update the ref after making the API call
     },[])
 
     return isLogin;
