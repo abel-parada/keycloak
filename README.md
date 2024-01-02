@@ -144,3 +144,7 @@ Currently there's no functionality to sign out through GUI. However, Keycloak ad
 | Developers  | GitHub                                         | LinkedIn                                                           |
 | ----------- | ---------------------------------------------- | ------------------------------------------------------------------ |
 | Abel Parada | [@abel-parada](https://github.com/abel-parada) | [@abelparadamillan](https://www.linkedin.com/in/abelparadamillan/) |
+
+### Acknowledgment
+
+https://github.com/karthik947/ creator of the free tutorial I have also used in this project.
