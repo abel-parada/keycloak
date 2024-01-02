@@ -135,6 +135,7 @@ Currently there's no functionality to sign out through GUI. However, Keycloak ad
 ## Materials used
 
 [Keycloak documentation: Getting started - Docker](https://www.keycloak.org/getting-started/getting-started-docker)
+
 [ Keycloak - A gentle introduction to Keycloak using Vite+React, NodeJS ](https://www.youtube.com/watch?v=5z6gy4WGnUs)
 
 
