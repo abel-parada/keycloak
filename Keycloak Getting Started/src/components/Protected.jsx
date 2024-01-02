@@ -1,13 +1,13 @@
 import  { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 
-const Protected = () => {
+const Protected = ({token}) => {
     const hasRun = useRef(false)
     const [docs, setDocs] = useState([]);
 
-    const getData = async ()=>  {
+    const getData = async (options={})=>  {
         try{
-            const {data} = await axios.get("/api/documents")
+            const {data} = await axios.get("/api/documents", options)
             setDocs(data)
         } catch(err) {
             console.error(err)
@@ -16,7 +16,14 @@ const Protected = () => {
 
     useEffect(()=>{
         if (!hasRun.current) {
-            getData();
+
+            const config ={
+                headers: {
+                    authorization: `Bearer ${token}`,
+                }
+            }
+
+            getData(config);
             hasRun.current = true; // Update the ref after making the API call
         }
     },[])

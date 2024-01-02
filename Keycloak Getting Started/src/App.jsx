@@ -4,9 +4,8 @@ import Public from "./components/Public"
 import useAuth from "./hooks/useAuth"
 
 function App() {
-  const isLogin = useAuth()
-  // console.log('isLogin', isLogin)
-  return isLogin ? <Protected/>: <Public/>
+  const [isLogin, token] = useAuth()
+  return isLogin ? <Protected token={token}/>: <Public/>
 }
 
 export default App

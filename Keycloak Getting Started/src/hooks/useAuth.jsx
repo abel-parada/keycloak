@@ -10,6 +10,7 @@ const client = new Keycloak({
 
 const useAuth = () => {
     const [isLogin, setLogin] = useState(false)
+    const [token,setToken] = useState(null)
     const hasRun = useRef(false)
 
     const initializeKeycloak = async () => {
@@ -18,6 +19,7 @@ const useAuth = () => {
               onLoad: "login-required",
             })
           setLogin(res);
+          setToken(client.token)
         } catch (error) {
           console.error(error);
         }
@@ -28,7 +30,7 @@ const useAuth = () => {
         hasRun.current = true; // Update the ref after making the API call
     },[])
 
-    return isLogin;
+    return [isLogin, token];
 };
 
 export default useAuth;
